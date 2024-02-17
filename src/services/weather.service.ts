@@ -2,12 +2,11 @@ import { configs } from "../configs/config";
 import { ApiError } from "../errors/api.error";
 import { IQuery } from "../types/params.type";
 import { IWeather } from "../types/weather.type";
-
 const https = require("https");
 
 class WeatherService {
   public async getWeather(params: IQuery): Promise<IWeather> {
-    let url = `https://api.openweathermap.org/data/2.5/weather?APPID=${configs.API_KEY}&units=metric`;
+    let url = configs.URL;
 
     if (params.city) {
       url += `&q=${params.city}`;
