@@ -2,7 +2,7 @@ import { configs } from "../configs/config";
 import { ApiError } from "../errors/api.error";
 import { IQuery } from "../types/params.type";
 import { IWeather } from "../types/weather.type";
-// eslint-disable-next-line @typescript-eslint/no-var-requires
+
 const https = require("https");
 
 class WeatherService {

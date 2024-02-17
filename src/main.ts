@@ -1,10 +1,9 @@
 import { configs } from "./configs/config";
 import { weatherRouter } from "./router/weather.router";
 import * as swaggerDocument from "./utils/swagger.json";
-// eslint-disable-next-line @typescript-eslint/no-var-requires
+
 const swaggerUi = require("swagger-ui-express");
 
-// eslint-disable-next-line @typescript-eslint/no-var-requires
 const express = require("express");
 const app = express();
 
