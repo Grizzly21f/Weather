@@ -9,7 +9,7 @@
       "get": {
         "tags": ["Weather"],
         "description": "Get weather data",
-        "summary": "GET WEATHER BY CITY OR LAT AND LON",
+        "summary": "GET WEATHER BY CITY OR LON AND LAT",
         "parameters": [
           {
             "name": "city",
