@@ -9,7 +9,7 @@
       "get": {
         "tags": ["Weather"],
         "description": "Get weather data",
-        "summary": "Get weather by city or lat lon",
+        "summary": "GET WEATHER BY CITY OR LAT AND LON",
         "parameters": [
           {
             "name": "city",
@@ -17,17 +17,16 @@
             "description": "City Name",
             "type": "string"
           },
-
-          {
-            "name": "lat",
-            "in": "query",
-            "description": "Latitude",
-            "type": "number"
-          },
           {
             "name": "lon",
             "in": "query",
             "description": "Longitude",
+            "type": "number"
+          },
+          {
+            "name": "lat",
+            "in": "query",
+            "description": "Latitude",
             "type": "number"
           }
         ],
@@ -41,13 +40,13 @@
           "400": {
             "description": "Bad request - Missing required parameters or invalid parameters",
             "schema": {
-              "type": "object",
-              "properties": {
-                "message": {
-                  "type": "string",
-                  "example": "Invalid request. Please provide city name or latitude and longitude."
-                }
-              }
+              "$ref": "#/definitions/BadRequest"
+            }
+          },
+          "406": {
+            "description": "Wrong",
+            "schema": {
+              "$ref": "#/definitions/WrongRequest"
             }
           }
         }
@@ -119,6 +118,24 @@
         "id": { "type": "number" },
         "name": { "type": "string" },
         "cod": { "type": "number" }
+      }
+    },
+    "BadRequest": {
+      "type": "object",
+      "properties": {
+        "message": {
+          "type": "string",
+          "example": "Invalid request. Please provide city name or latitude and longitude."
+        }
+      }
+    },
+    "WrongRequest": {
+      "type": "object",
+      "properties": {
+        "message": {
+          "type": "string",
+          "example": "Invalid request. Please provide latitude and longitude."
+        }
       }
     }
   }
