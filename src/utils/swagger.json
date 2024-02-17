@@ -57,27 +57,14 @@
     "Weather": {
       "type": "object",
       "properties": {
-        "coord": {
+        "Coordinates": {
           "type": "object",
           "properties": {
             "lon": { "type": "number" },
             "lat": { "type": "number" }
           }
         },
-        "weather": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "properties": {
-              "id": { "type": "number" },
-              "main": { "type": "string" },
-              "description": { "type": "string" },
-              "icon": { "type": "string" }
-            }
-          }
-        },
-        "base": { "type": "string" },
-        "main": {
+        "MainWeather": {
           "type": "object",
           "properties": {
             "temp": { "type": "number" },
@@ -90,8 +77,7 @@
             "grnd_level": { "type": "number" }
           }
         },
-        "visibility": { "type": "number" },
-        "wind": {
+        "Wind": {
           "type": "object",
           "properties": {
             "speed": { "type": "number" },
@@ -99,14 +85,7 @@
             "gust": { "type": "number" }
           }
         },
-        "clouds": {
-          "type": "object",
-          "properties": {
-            "all": { "type": "number" }
-          }
-        },
-        "dt": { "type": "number" },
-        "sys": {
+        "CountryAndSun": {
           "type": "object",
           "properties": {
             "country": { "type": "string" },
@@ -114,10 +93,14 @@
             "sunset": { "type": "number" }
           }
         },
-        "timezone": { "type": "number" },
-        "id": { "type": "number" },
-        "name": { "type": "string" },
-        "cod": { "type": "number" }
+        "Other": {
+          "type": "object",
+          "properties": {
+            "timezone": { "type": "number" },
+            "City": { "type": "string" },
+            "cod": { "type": "number" }
+          }
+        }
       }
     },
     "BadRequest": {
@@ -139,4 +122,6 @@
       }
     }
   }
+
+
 }

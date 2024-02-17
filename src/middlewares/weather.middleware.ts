@@ -9,16 +9,28 @@ class ParamsMiddleware {
       const param = req.query as IQuery;
 
       if (param.city && param.lat && param.lon) {
-        throw new ApiError("Wrong", 406);
+        throw new ApiError(
+          "Invalid request. Please provide latitude and longitude.",
+          406,
+        );
       }
       if (Object.keys(req.query).length === 0) {
-        throw new ApiError("Bad Request", 400);
+        throw new ApiError(
+          "Invalid request. Please provide city name or latitude and longitude",
+          400,
+        );
       }
       if (param.city && (param.lat || param.lon)) {
-        throw new ApiError("Bad Request", 400);
+        throw new ApiError(
+          "Invalid request. Please provide city name or latitude and longitude.",
+          400,
+        );
       }
       if ((param.lon && !param.lat) || (!param.lon && param.lat)) {
-        throw new ApiError("Bad Request", 400);
+        throw new ApiError(
+          "Invalid request. Please provide city name or latitude and longitude.",
+          400,
+        );
       }
 
       res.locals = param;
