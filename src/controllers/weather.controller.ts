@@ -1,6 +1,6 @@
 import { NextFunction, Request, Response } from "express";
 
-import { WeatherPresenter } from "../presenters/weather.presenter"; // Імпортуємо weatherPresenter
+import { WeatherPresenter } from "../presenters/weather.presenter";
 import { weatherService } from "../services/weather.service";
 import { IQuery } from "../types/params.type";
 
