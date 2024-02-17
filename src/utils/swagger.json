@@ -35,6 +35,18 @@
             "schema": {
               "$ref": "#/definitions/Weather"
             }
+          },
+          "400": {
+            "description": "Bad request - Missing required parameters or invalid parameters",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string",
+                  "example": "Invalid request. Please provide city name or latitude and longitude."
+                }
+              }
+            }
           }
         }
       }
